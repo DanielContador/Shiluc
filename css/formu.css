@@ -5,7 +5,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     background: #E5E5E5;
-    background-image: url(img/imagenportada.img);
+    background-image: url(/img/imagenportada.img);
 }
 
 main {
