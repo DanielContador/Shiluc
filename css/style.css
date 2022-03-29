@@ -2,11 +2,6 @@
     font-size: 12px;
 }
 
-body {
-    background-color: #9c0fa8;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 header {
     background: rgb(255, 255, 255);
     width: 100%;
@@ -75,6 +70,7 @@ body {
     background-image: url(https://github.com/DanielContador/Shiluc/blob/master/img/imagenbase.jpg?raw=true);
     background-size: cover;
     color: white;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 th,
