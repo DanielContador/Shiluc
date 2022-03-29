@@ -72,7 +72,7 @@ nav li a:hover {
 }
 
 body {
-    background-image: url('/img/imagenbase.img');
+    background-image: url('img/imagenbase.img');
     background-size: cover;
     color: white;
 }
