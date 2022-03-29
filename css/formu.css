@@ -4,7 +4,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-image: url("/img/imagenportada.img");
+    background-image: url(https://github.com/DanielContador/Shiluc/blob/master/img/imagenportada.jpg?raw=true);
 }
 
 main {
@@ -12,7 +12,6 @@ main {
     width: 90%;
     margin: auto;
     padding: 40px;
-    background-image: url("/img/imagenportada.img");
 }
 
 .fo {
