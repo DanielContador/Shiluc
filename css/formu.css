@@ -7,6 +7,10 @@ body {
     background-image: url("/img/imagenportada.img");
 }
 
+#fondoform {
+    background-image: url(/img/imagenportada.img);
+}
+
 main {
     max-width: 800px;
     width: 90%;
