@@ -72,7 +72,7 @@ nav li a:hover {
 }
 
 body {
-    background-image: url('/img/imagenbase.img');
+    background-image: url('https://github.com/DanielContador/Shiluc/blob/39aa17aadeb10010dcff7fa9d592c16f4f8356a9/img/imagenbase.img');
     background-size: cover;
     color: white;
 }
