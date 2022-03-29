@@ -77,6 +77,10 @@ body {
     color: white;
 }
 
+.fondo {
+    background-image: url(/img/imagenbase.img);
+}
+
 th,
 td {
     padding: 8px;
