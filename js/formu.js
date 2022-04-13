@@ -108,3 +108,15 @@ formulario.addEventListener('submit', (e) => {
 $('.navbar-collapse a').click(function() {
     $(".navbar-collapse").collapse('hide');
 });
+
+
+function validarContacto() {
+    var consulta = document.getElementById("contacto").value;
+    if (consulta.length == 0) {
+        alert("Debe Ingresar Consulta");
+        document.getElementById("errorConsulta").innerHTML = "La consulta no debe estar vacía";
+
+    }
+
+
+}

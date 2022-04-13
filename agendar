@@ -23,8 +23,8 @@
         </div>
     </nav>
 
-    <br>
-    <br>
+
+
     <br>
     <br>
     <br>
@@ -33,27 +33,40 @@
         <div class="row">
             <div class="col-sm-12 col-md-12">
                 <div id="form-group" class="fo">
-                    <form action="">
+
+                    <form action="" id="formulario" class="formulario">
+
 
                         <fieldset>
                             <legend>Contactanos!</legend>
-                            <p>Si tienes dudas sobre los servicios, aqui puedes hacer tus preguntas</p>
-                            <br>
-
-                            <textarea name="contacto" id="contacto" class="form-control" rows="3" placeholder="Escribe aquí tu consulta"></textarea>
-                            <span id="errorConsulta"></span>
-                            <br>
-                            <button type="submit" onclick="validarContacto()" class="btn-danger">Enviar</button>
+                            Nombre de usuario <input name="Usuario" type="text" value="" placeholder="Ingrese nombre de usuario"> <br>
+                            <label for="servicios" class="formulario__label">Selecciona tu Servicio</label>
+                            <select name="servicios" id="servicios"> 
+            <optgroup label="Hechizos">
+                <option value="0">Haz click para selecionar </option>
+                <option value="1">Destierros</option>
+                <option value="2">Limpiezas Energéticas</option>
+                <option value="3">Retornos</option>
+                <option value="4">Amarres</option>
+                <option value="5">Endulzamientos</option>
+                <option value="6">Abre caminos</option>
+                <option value="7">Abundancia</option>
+                <option value="8">Separación</option>
+                <option value="9">Congelamientos</option>
+                <option value="10">Glamour</option>
+                <option value="11">Protección</option>
+            </optgroup>
+            <optgroup label="Lecturas de Tarot"></optgroup>
+            <option value="12">Individual</option>
+            <option value="13">Lectura de 30 min</option>
+            <option value="14">Lectura premium 1 hora</option>
+        </select>
                         </fieldset>
-
-
                 </div>
                 </form>
             </div>
         </div>
     </div>
-
-    <script src="js/formu.js"></script>
 </body>
 
 </html>
