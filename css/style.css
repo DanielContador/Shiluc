@@ -66,6 +66,12 @@ nav li a:hover {
     padding: 2rem;
 }
 
+#footerform {
+    margin-top: auto;
+    background: #202020;
+    text-align: center;
+}
+
 body {
     background-image: url(https://github.com/DanielContador/Shiluc/blob/master/img/imagenbase.jpg?raw=true);
     background-size: cover;
