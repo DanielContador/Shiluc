@@ -27,12 +27,28 @@ main {
     text-align: center;
 }
 
+#servicio {
+    padding: 2rem;
+}
+
+#contactform {
+    padding: 3rem;
+    margin: 3rem;
+    border: 5rem;
+}
+
 .formulario {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     margin-top: 78px;
     color: #fff;
+}
+
+#footerform {
+    margin-top: auto;
+    background: #202020;
+    text-align: center;
 }
 
 .formulario__label {
