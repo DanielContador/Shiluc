@@ -84,7 +84,7 @@ inputs.forEach((input) => {
     input.addEventListener('keyup', validarFormulario);
     input.addEventListener('blur', validarFormulario);
 });
-
+/*
 formulario.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -104,7 +104,7 @@ formulario.addEventListener('submit', (e) => {
         document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
     }
 });
-
+*/
 $('.navbar-collapse a').click(function() {
     $(".navbar-collapse").collapse('hide');
 });
@@ -120,3 +120,32 @@ function validarContacto() {
 
 
 }
+$(document).ready(function() {
+    $("#error").hide();
+});
+
+$("#usuarioini").blur(function() {
+    /**validarr */
+    var mensaje = "";
+
+    if ($("#usuarioini").val().trim().length == 0) {
+
+        mensaje = "El usuario está en blanco";
+    }
+
+
+    if (mensaje != "") {
+
+        $("#error").html(mensaje); //almacena el mensaje en el div
+        $("#error").show(); //muestra el div
+        event.preventDefault(); //evita que se envie
+    }
+
+
+});
+
+$("#contrasenaini").blur(function() {
+    /**validarr */
+
+
+});
