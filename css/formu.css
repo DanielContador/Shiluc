@@ -32,9 +32,9 @@ main {
 }
 
 #contactform {
+    display: block;
+    text-align: center;
     padding: 3rem;
-    margin: 3rem;
-    border: 5rem;
 }
 
 .formulario {
