@@ -136,8 +136,8 @@ $("#usuarioini").blur(function() {
         mensaje = "El usuario está en blanco";
     }
 
-    if ($("#usuarioini").val().trim().length > 12) {
-        mensaje = "El nombre de usuario no puede tener mas de 12 caracteres";
+    if ($("#usuarioini").val().trim().length > 12 || $("#usuarioini").val().trim().length < 3) {
+        mensaje = "El nombre de usuario debe estar entre 4 y 12 caracteres";
     }
 
 
