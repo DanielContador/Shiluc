@@ -125,12 +125,18 @@ $(document).ready(function() {
 });
 
 $("#usuarioini").blur(function() {
+
+    $("#error").hide();
     /**validarr */
     var mensaje = "";
 
     if ($("#usuarioini").val().trim().length == 0) {
 
         mensaje = "El usuario está en blanco";
+    }
+
+    if ($("#usuarioini").val().trim().length > 12) {
+        mensaje = "El nombre de usuario no puede tener mas de 12 caracteres";
     }
 
 
@@ -145,7 +151,27 @@ $("#usuarioini").blur(function() {
 });
 
 $("#contrasenaini").blur(function() {
+
+    $("#error").hide();
     /**validarr */
+    var mensaje = "";
+
+    if ($("#contrasenaini").val().trim().length == 0) {
+
+        mensaje = "Ingrese su contraseña!";
+    }
+
+    if ($("#contrasenaini").val().trim().length > 13) {
+        mensaje = "La contraseña no puede tener mas de 13 caracteres";
+    }
+
+
+    if (mensaje != "") {
+
+        $("#error").html(mensaje); //almacena el mensaje en el div
+        $("#error").show(); //muestra el div
+        event.preventDefault(); //evita que se envie
+    }
 
 
 });
