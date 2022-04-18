@@ -113,10 +113,10 @@ $('.navbar-collapse a').click(function() {
 function validarContacto() {
     var consulta = document.getElementById("contacto").value;
     if (consulta.length == 0) {
-        evt.preventDefault();
+
         alert("Debe Ingresar Consulta");
         document.getElementById("errorConsulta").innerHTML = "La consulta no debe estar vacía";
-
+        event.preventDefault();
     }
 
 
