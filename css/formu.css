@@ -8,6 +8,7 @@ body {
     background-size: cover;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
 }
 
 main {
@@ -27,6 +28,21 @@ main {
     text-align: center;
 }
 
+#volver {
+    background-color: #421f1f;
+}
+
+#fo {
+    width: 100%;
+    max-width: 50rem;
+    background-color: rgba(114, 53, 53, 0.753);
+    padding: 10px;
+    margin-top: 45px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
+    text-align: center;
+    max-height: 50rem;
+}
+
 #servicio {
     padding: 2rem;
 }
@@ -35,6 +51,7 @@ main {
     display: block;
     text-align: center;
     padding: 3rem;
+    max-height: 25rem;
 }
 
 .formulario {
