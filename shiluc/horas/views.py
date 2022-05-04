@@ -4,3 +4,6 @@ from django.shortcuts import render
 
 def index(request):
     return render(request, 'horas/index.html');
+
+def agenda(request):
+    return render(request, 'horas/agenda.html');
