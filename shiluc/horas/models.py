@@ -2,7 +2,7 @@ from django.db import models
 #makemigrations migrate: para crear tablas en base de datos
 # Create your models here.
 class Cliente(models.Model):
-    auto_increment_id = models.AutoField(primary_key=True)
+   
     nombreCliente = models.CharField(max_length=50,verbose_name='Nombre cliente', blank=False, null=False)
     nombreUsuario = models.CharField(max_length=16,verbose_name='Nombre Usuario', blank=False, null=False)
     correo = models.CharField(max_length=50,verbose_name='Correo', blank=False, null=False)
@@ -16,7 +16,7 @@ class Cliente(models.Model):
 
 
 class Servicio(models.Model):
-    auto_increment_id = models.AutoField(primary_key=True)
+    
     tipoServicio = models.CharField(max_length=20, verbose_name='Tipo de servicio', blank=False, null=False)
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
 
