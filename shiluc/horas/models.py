@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class Cliente(models.Model):
     auto_increment_id = models.AutoField(primary_key=True)
-    nombreCliente = models.CharField(max_length=50,verbose_name='Nombre ecliente', blank=False, null=False)
+    nombreCliente = models.CharField(max_length=50,verbose_name='Nombre cliente', blank=False, null=False)
     nombreUsuario = models.CharField(max_length=16,verbose_name='Nombre Usuario', blank=False, null=False)
     correo = models.CharField(max_length=50,verbose_name='Correo', blank=False, null=False)
     telefono = models.IntegerField(verbose_name='teléfono', blank=False, null=False)
