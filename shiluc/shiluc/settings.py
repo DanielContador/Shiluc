@@ -73,7 +73,7 @@ WSGI_APPLICATION = 'shiluc.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
+# Esto se cambia para implementar oracle en vez de sqlite
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',

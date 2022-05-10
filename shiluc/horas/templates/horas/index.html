@@ -122,7 +122,7 @@
     <!--texto-->
     <br>
     <section class="bienvenida">
-        <h4 class="bienvenida"> <b>Bienvenide!</b> Espero que te encuentres bien y que estes teniando un bello dìa </h4>
+        <h4 class="bienvenida"> <b>Bienvenide!</b> {{nombre}} Espero que te encuentres bien y que estes teniando un bello dìa </h4>
         <h5 class="bienvenida">@Shiluc.moon_tarot Tiene diversos servicios para ofrecerte para entregarte la mejor abundancia para ti y tus seres amados</h5>
     </section>
     <br>
@@ -188,11 +188,26 @@
         <div class="row">
             <div class="col-sm-12 col-md-6 item">
                 <h3 class="text-center" id="testimonios"> <i>Testimonios</i> </h3>
+                <h3>{{persona.nombre}} {{persona.edad}} +56 9{{persona.telefono}} </h3>
             </div>
 
 
             <div class="col-sm-12 col-md-6 item">
                 <h3 class="text-center" id="servicios"> <i>Servicios</i></h3>
+
+
+                <ul>
+                    {% for lunch in servicios %}
+                    <li>
+                        {{lunch}}
+                    </li>
+                    {% endfor %}
+
+
+                </ul>
+
+
+
             </div>
         </div>
     </div>
