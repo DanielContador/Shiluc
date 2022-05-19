@@ -195,3 +195,7 @@ $(document).ready(function() {
     a.open("GET", url, true);
     a.send()
 });
+
+$(document).on('click', '.confirmareliminar', function() {
+    return confirm('Estás seguro que quieres eliminar este servicio?');
+});
