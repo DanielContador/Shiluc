@@ -50,16 +50,16 @@
                                     <a class="nav-link" style="color: #ffffff;" href="horas/agenda.html">Agenda</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" style="color: #ffffff;" href="#">Preguntas frecuentes</a>
+                                    <a class="nav-link" style="color: #ffffff;" href="{% url 'agregarservicio' %}">Agregar servicio</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" style="color: #ffffff;" href="iniciosesion.html">Iniciar sesión</a>
+                                    <a class="nav-link" style="color: #ffffff;" href="{% url 'iniciosesion' %}">Iniciar sesión</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" style="color: #ffffff;" href="contacto.html">Contacto</a>
+                                    <a class="nav-link" style="color: #ffffff;" href="{% url 'contacto' %}">Contacto</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" style="color: #ffffff;" href="formu.html">Registrarse</a>
+                                    <a class="nav-link" style="color: #ffffff;" href="{% url 'registro' %}">Registrarse</a>
                                 </li>
 
                             </ul>
@@ -188,7 +188,7 @@
         <div class="row">
             <div class="col-sm-12 col-md-6 item">
                 <h3 class="text-center" id="testimonios"> <i>Testimonios</i> </h3>
-                <h3>{{persona.nombre}} {{persona.edad}} +56 9{{persona.telefono}} </h3>
+                <!--<h3>{{persona.nombre}} {{persona.edad}} +56 9{{persona.telefono}} </h3>-->
             </div>
 
 
@@ -196,17 +196,51 @@
                 <h3 class="text-center" id="servicios"> <i>Servicios</i></h3>
 
 
-                <ul>
+                <table border="1">
+                    <h4>Lista de servicios</h4>
+                    <tr>
+                        <th>nombre servicio</th>
+                        <th>descripcion</th>
+                        <th>precio</th>
+                        <th scope="col">Modificar</th>
+                        <th scope="col">Eliminar</th>
+
+
+
+
+                    </tr>
+
+                    {% for ser in servicios %}
+
+                    <tr>
+                        <td>{{ser.nombreServicio}}</td>
+                        <td>{{ser.descripcion}}</td>
+                        <td>{{ser.precio}}</td>
+                        <td class="text-center">
+                            <a href="{% url 'modificarservicio' ser.id%}"><img src="{% static 'horas/img/editar.png' %}" id="editar" alt="editar"></a>
+                        </td>
+                        <td class="text-center">
+                            <a href="{% url 'eliminarservicio' ser.id%}"><img src="{% static 'horas/img/delete.png' %}" id="delete" alt="delete"></a>
+                        </td>
+
+
+                    </tr>
+
+                    {% endfor %}
+                    <br>
+
+
+                    <a href="{% url 'agregarservicio' %}"><img src="{% static 'horas/img/agregar.png' %}" id="agregar" alt="agregar"></a>
+                    <h5 class="agregarserv">Agregar servicio &nbsp;&nbsp;&nbsp;</h2>
+                </table>
+
+                <!--<ul>
                     {% for lunch in servicios %}
                     <li>
                         {{lunch}}
                     </li>
                     {% endfor %}
-
-
-                </ul>
-
-
+                </ul>-->
 
             </div>
         </div>

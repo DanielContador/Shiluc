@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,13 +18,13 @@
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/formu.css">
+    <link rel="stylesheet" href="{% static 'horas/css/formu.css' %}">
 </head>
 
 <body>
     <nav id="volver" class="navbar navbar-expand-md navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="{% url 'index' %}">
                 Volver a la<h4><b>Pagina principal</b></h4>
             </a>
         </div>
@@ -114,7 +115,7 @@
         <br><br><br><br>
     </main>
 
-    <script src="js/formu.js"></script>
+    <script src="{% static 'horas/js/formu.js' %}"></script>
     <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 </body>
 

@@ -139,3 +139,20 @@ td {
 #logo {
     max-width: 3rem;
 }
+
+#delete {
+    max-width: 2rem;
+}
+
+#editar {
+    max-width: 2rem;
+}
+
+#agregar {
+    max-width: 2rem;
+    float: right;
+}
+
+.agregarserv {
+    text-align: right;
+}
