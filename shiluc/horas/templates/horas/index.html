@@ -50,7 +50,7 @@
                                     <a class="nav-link" style="color: #ffffff;" href="horas/agenda.html">Agenda</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" style="color: #ffffff;" href="{% url 'agregarservicio' %}">Agregar servicio</a>
+                                    <a class="nav-link" style="color: #ffffff;" href="{% url 'lista_servicio' %}">Listar API</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" style="color: #ffffff;" href="{% url 'iniciosesion' %}">Iniciar sesión</a>
@@ -204,6 +204,7 @@
                         <th>precio</th>
                         <th scope="col">Modificar</th>
                         <th scope="col">Eliminar</th>
+                        <th scope="col" class="text-center">API</th>
 
 
 
@@ -216,11 +217,15 @@
                         <td>{{ser.nombreServicio}}</td>
                         <td>{{ser.descripcion}}</td>
                         <td>{{ser.precio}}</td>
+                        
                         <td class="text-center">
                             <a href="{% url 'modificarservicio' ser.id%}"><img src="{% static 'horas/img/editar.png' %}" id="editar" alt="editar"></a>
                         </td>
                         <td class="text-center">
                             <a href="{% url 'eliminarservicio' ser.id%}" class="confirmareliminar"><img src="{% static 'horas/img/delete.png' %}" id="delete" alt="delete"></a>
+                        </td>
+                        <td class="text-center">
+                            <a href="{% url 'detalle_servicio' ser.id%}" >Modificar API</a>
                         </td>
 
 
