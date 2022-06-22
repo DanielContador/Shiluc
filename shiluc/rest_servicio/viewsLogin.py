@@ -7,15 +7,16 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import check_password
 from rest_framework.authtoken.models import Token
+from horas.models import Perfil
 
 
 
 @api_view(['POST'])
-def login(request):
+def login(request, username, password):
     #esto se debe reemplazar por el HTML
-    data = JSONParser().parse(request)
-    username = data['username']
-    password = data['password']
+    #data = JSONParser().parse(request)
+    #username = Perfil.objects.get(username=username) #data['username']
+    #password = Perfil.objects.get(password=password) #data['password']
     try:
         user = User.objects.get(username = username)
     except User.DoesNotExist:

@@ -10,9 +10,8 @@ from django.dispatch import receiver
 
 class Perfil(models.Model):
     usuario = models.OneToOneField(User, on_delete=models.CASCADE)
-    bio = models.CharField(max_length=255, blank=True)
-    fotoPerfil = models.ImageField(upload_to='fotosPerfil', height_field=None, width_field=None, max_length=100, null=True)
-    
+    rut = models.CharField(max_length=20, verbose_name='RUT')
+    telefono = models.CharField(max_length=20, verbose_name='Teléfono')
     def __str__(self):
         return self.usuario.username
     

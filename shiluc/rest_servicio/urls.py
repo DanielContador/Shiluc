@@ -7,6 +7,6 @@ urlpatterns = [
     path('lista_servicio',lista_servicio,name="lista_servicio"),
     path('detalle_servicio/<id>', detalle_servicio, name='detalle_servicio'),
     #el del name es el que se utiliza en el html, el del medio es el que llama a la funcion de viewsLogin
-    path('login',login,name='login'),
+    path('login/<username>/<password>',login,name='login'),
 
 ]

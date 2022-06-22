@@ -6,7 +6,4 @@ from .models import Perfil, Servicio, Reserva
 
 admin.site.register(Servicio)
 admin.site.register(Reserva)
-
-@admin.register(Perfil)
-class PerfilAdmin(admin.ModelAdmin):
-    list_display = ('usuario', 'bio')
+admin.site.register(Perfil)
