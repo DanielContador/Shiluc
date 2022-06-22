@@ -39,6 +39,9 @@ def index(request):
 def contacto(request):
     return render(request, 'horas/contacto.html')
 
+def base(request):
+    return render(request, 'horas/base.html')
+
 def index2(request):
     return render(request, 'horas/index.html')
 

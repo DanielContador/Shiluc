@@ -1,5 +1,5 @@
 from django.urls import URLPattern, path
-from .views import eliminarservicio, index, contacto, iniciosesion, registro, agregarservicio, modificarservicio
+from .views import eliminarservicio, index, contacto, iniciosesion, registro, agregarservicio, modificarservicio, base
 from .import views
 from horas.views import SignUpView, BienvenidaView, SignInView, SignOutView
 urlpatterns = [
@@ -15,6 +15,7 @@ urlpatterns = [
     path('registrate/', SignUpView.as_view(), name='sign_up'),
     path('incia-sesion/', SignInView.as_view(), name='sign_in'),
     path('cerrar-sesion/', SignOutView.as_view(), name='sign_out'),
+    path('base/', views.base, name='base'),
     
     ]
 
