@@ -1,20 +1,30 @@
 from django.db import models
+from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
 #makemigrations migrate: para crear tablas en base de datos
 #pip install pillow (image field)
 # Create your models here.
-class Cliente(models.Model):
-   
-    nombreCliente = models.CharField(max_length=50,verbose_name='Nombre cliente')
-    nombreUsuario = models.CharField(max_length=16,verbose_name='Nombre Usuario')
-    correo = models.CharField(max_length=50,verbose_name='Correo')
-    telefono = models.IntegerField(verbose_name='teléfono')
-    claveUsuario = models.CharField(max_length=12,verbose_name='Contraseña')
-    imagenUsuario = models.ImageField(upload_to='ImagenUsuario', height_field=None, width_field=None, max_length=100, null=True)
+
+
+class Perfil(models.Model):
+    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
+    bio = models.CharField(max_length=255, blank=True)
+    fotoPerfil = models.ImageField(upload_to='fotosPerfil', height_field=None, width_field=None, max_length=100, null=True)
     
-
-
     def __str__(self):
-        return self.nombreCliente
+        return self.usuario.username
+    
+@receiver(post_save, sender=User)
+def crear_usuario_perfil(sender, instance, created, **kwargs):
+    if created:
+        Perfil.objects.create(usuario=instance)
+
+@receiver(post_save, sender=User)
+def guardar_usuario_perfil(sender, instance, **kwargs):
+    instance.perfil.save()
+    
 
 
 class Servicio(models.Model):
@@ -27,7 +37,7 @@ class Servicio(models.Model):
 
 class Reserva(models.Model):
     
-    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(Perfil, on_delete=models.CASCADE)
     fechaReserva = models.DateTimeField(null=True)
     servicio = models.ForeignKey(Servicio, on_delete=models.CASCADE)
     comentario = models.CharField(max_length=50,verbose_name='Comentario')
