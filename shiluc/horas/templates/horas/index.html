@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shiluc Moon Tarot-</title>
+    <title>{% block title %}{% endblock %}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=BhuTuka+Expanded+One&display=swap" rel="stylesheet">
@@ -122,8 +122,11 @@
     <!--texto-->
     <br>
     <section class="bienvenida">
-        <h4 class="bienvenida"> <b>Bienvenide!</b> {{nombre}} Espero que te encuentres bien y que estes teniando un bello dìa </h4>
+        <h4 class="bienvenida"> <b>Bienvenide!</b> Espero que te encuentres bien y que estes teniando un bello dìa </h4>
         <h5 class="bienvenida">@Shiluc.moon_tarot Tiene diversos servicios para ofrecerte para entregarte la mejor abundancia para ti y tus seres amados</h5>
+        {% block content %}
+
+        {% endblock content %}
     </section>
     <br>
 
