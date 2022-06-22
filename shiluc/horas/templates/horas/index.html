@@ -140,7 +140,7 @@
                     <br>
                     <h4>Lecturas completas Dias </h4>
                     <br>
-                    <table class="text-center">
+                    <table class="table table-bordered table-dark">
                         <tr>
                             <th>Miercoles</th>
                             <td>19:00</td>
@@ -199,7 +199,7 @@
                 <h3 class="text-center" id="servicios"> <i>Servicios</i></h3>
 
 
-                <table border="1">
+                <table border="1" class="table table-bordered table-dark">
                     <h4>Lista de servicios</h4>
                     <tr>
                         <th>nombre servicio</th>
@@ -207,7 +207,7 @@
                         <th>precio</th>
                         <th scope="col">Modificar</th>
                         <th scope="col">Eliminar</th>
-                        <th scope="col" class="text-center">API</th>
+                    
 
 
 
@@ -227,9 +227,9 @@
                         <td class="text-center">
                             <a href="{% url 'eliminarservicio' ser.id%}" class="confirmareliminar"><img src="{% static 'horas/img/delete.png' %}" id="delete" alt="delete"></a>
                         </td>
-                        <td class="text-center">
+                       <!-- <td class="text-center">
                             <a href="{% url 'detalle_servicio' ser.id%}" >Modificar API</a>
-                        </td>
+                        </td>-->
 
 
                     </tr>
