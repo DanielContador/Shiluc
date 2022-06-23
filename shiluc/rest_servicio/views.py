@@ -37,6 +37,7 @@ def lista_servicio(request):
         """
 @api_view(['GET','PUT','DELETE'])
 @permission_classes((IsAuthenticated,))
+
 def detalle_servicio(request, id):
     try:
         servicio = Servicio.objects.get(id=id)
