@@ -3,6 +3,7 @@ from .views import eliminarservicio, index, contacto, iniciosesion, registro, ag
 from .import views
 from django.views.generic import TemplateView
 from django.contrib.auth.views import LogoutView
+from rest_servicio.viewsLogin import login
 urlpatterns = [
     path('', index, name="index"),
     path('contacto/', views.contacto , name='contacto'),

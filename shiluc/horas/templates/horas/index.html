@@ -203,6 +203,22 @@
             <div class="col-sm-12 col-md-6 item">
                 <h3 class="text-center" id="testimonios"> <i>Testimonios</i> </h3>
                 <!--<h3>{{persona.nombre}} {{persona.edad}} +56 9{{persona.telefono}} </h3>-->
+                <table border="1" class="table table-bordered table-dark">
+                <tr>
+                    <th>nombre servicio</th>
+                    <th>descripcion</th>
+                    <th>precio</th>
+                </tr>
+                {% for serapi in listaServicio%}
+
+                <tr>
+                    <td>{{serapi.precio}}</td>
+                    <td>{{serapi.nombreServicio}}</td>
+                    <td>{{serapi.descripcion}}</td>
+
+                </tr>
+                {% endfor %}
+            </table>
             </div>
 
 

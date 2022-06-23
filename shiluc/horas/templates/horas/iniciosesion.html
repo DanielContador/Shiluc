@@ -1,4 +1,5 @@
  {% load static %}
+ {% load rest_framework %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,31 +39,32 @@
             <div class="col-sm-12 col-md-12">
                 <div id="form-group" class="fo">
 
-                    <form method="post" action="" name="inicio sesion" id="iniciosesion">
+                    <form method="post" action="{% url 'login' %}" name="inicio sesion" id="iniciosesion">
                         {% csrf_token %}
                         <p>Si ya tienes una cuenta Inicia sesión ingresando tus datos</p>
                         <fieldset>
 
                             <div class="form-control">
-                                Nombre de usuario <input name="usuario" class="form-control" type="text" value="" id="usuarioini" minlength=”4” size="20" placeholder="Ingrese su nombre de usuario">
+                                Nombre de usuario <input name="username" class="form-control" type="text" value="" id="usuarioini" minlength=”4” size="20" placeholder="Ingrese su nombre de usuario">
 
                             </div>
                             <br> <br>
 
 
                             <div class="form-control">
-                                Ingrese contraseña <input id="contrasenaini" name="contraseña" class="form-control" type="password" value="" placeholder="Ingrese contraseña">
+                                Ingrese contraseña <input id="contrasenaini" name="password" class="form-control" type="password" value="" placeholder="Ingrese contraseña">
                             </div>
 
-
-                            <br> <input type="submit" class="btn-danger" href="{% url 'login' usuarioini, contrasenaini}" value="Enviar" placeholder="Enviar">
+                            
+                            <br> <input type="submit" class="btn-danger" value="Enviar" placeholder="Enviar">
 
                             <div id="error" class="alert alert-danger" role="alert"></div>
 
 
-                            <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-
+                            
+                            {{ mensaje }}
                         </fieldset>
+                        {{ mensaje }}
                     </form>
                 </div>
             </div>
