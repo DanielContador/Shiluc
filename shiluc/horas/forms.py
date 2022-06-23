@@ -10,3 +10,6 @@ class ServicioForm(ModelForm):
     class Meta:
         model = Servicio
         fields = ['precio', 'nombreServicio', 'descripcion']
+
+
+    

@@ -13,6 +13,7 @@ urlpatterns = [
     path('agregarservicio/', views.agregarservicio , name='agregarservicio'),
     path('modificarservicio/<id>',views.modificarservicio, name='modificarservicio'),
     path('eliminarservicio/<id>', eliminarservicio, name='eliminarservicio'),
+    path('', TemplateView.as_view(template_name="index.html")),
     path('accounts/', include('allauth.urls')),
     path('logout', LogoutView.as_view()),
     

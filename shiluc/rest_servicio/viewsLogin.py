@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -28,7 +28,8 @@ def login(request):
     if not pass_valido:
         return Response("Password Incorrecta")
     token, created = Token.objects.get_or_create(user=user)
-    return Response(token.key)
+    return redirect(to='index')
+    
 
 """
 @api_view(['POST'])
