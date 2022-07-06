@@ -298,6 +298,7 @@
 				headers:{
 					'Content-type':'application/json',
 					'X-CSRFToken':csrftoken,
+					'Authorization':'Token c96105247b272dfdecb5ad903fbf42fa1fbbace1',
 				},
 				body:JSON.stringify({'nombreServicio':nombreServicio, 'precio':precio, 'descripcion':descripcion})
 			}
@@ -328,6 +329,7 @@
 				headers:{
 					'Content-type':'application/json',
 					'X-CSRFToken':csrftoken,
+					'Authorization':'Token c96105247b272dfdecb5ad903fbf42fa1fbbace1',
 				}
 			}).then((response) => {
 				buildList()

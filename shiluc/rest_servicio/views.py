@@ -12,6 +12,7 @@ from horas.forms import ServicioForm
 
 # Create your views here.
 @api_view(['POST'])
+@permission_classes((IsAuthenticated,))
 def editarServicio(request, id):
     servicio = Servicio.objects.get(id=id)
     serializer = ServicioSerializer(instance=servicio, data=request.data)
@@ -23,7 +24,7 @@ def editarServicio(request, id):
 
 @csrf_exempt
 @api_view(['GET'])
-#@permission_classes((IsAuthenticated,))
+##@permission_classes((IsAuthenticated,))
 def lista_servicio(request):
     if request.method =='GET':
         listaServicio = Servicio.objects.all().order_by('-id')
@@ -32,6 +33,7 @@ def lista_servicio(request):
 
 
 @api_view(['POST'])
+@permission_classes((IsAuthenticated,))
 def crearServicio(request):
     serializer = ServicioSerializer(data=request.data)
     
