@@ -68,9 +68,12 @@
                                 <li class="nav-item">
                                     <a class="nav-link" style="color: #ffffff;" href="{% url 'registro' %}">Registrarse</a>
                                 </li>
+                                {% if user.is_authenticated %}
                                 <li class="nav-item">
-                                    <a class="nav-link" style="color: #ffffff;" href="{% url 'carrito' %}">Carrito</a>
+                                    <a class="nav-link" style="color: #ffffff;" href="{% url 'carrito' %}">Tienda</a>
                                 </li>
+                                {% endif %}
+
 
                             </ul>
                         </div>
