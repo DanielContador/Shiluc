@@ -38,6 +38,12 @@ def index(request):
 def contacto(request):
     return render(request, 'horas/contacto.html')
 
+def editapi(request):
+    return render(request, 'frontend/lista.html')
+
+def carrito(request):
+    return render(request, 'horas/carritos.html')
+
 def base(request):
     return render(request, 'horas/base.html')
 

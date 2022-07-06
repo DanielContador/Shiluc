@@ -5,4 +5,4 @@ from horas.models import Servicio
 class ServicioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Servicio
-        fields = ['precio', 'nombreServicio', 'descripcion']
+        fields = '__all__'

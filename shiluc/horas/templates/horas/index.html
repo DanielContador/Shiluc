@@ -1,5 +1,4 @@
-{% load static %}
-{% load socialaccount %}
+{% load static %} {% load socialaccount %}
 <!DOCTYPE html>
 <html lang="es">
 
@@ -47,12 +46,19 @@
                                 <li class="nav-item">
                                     <a class="nav-link" style="color: #ffffff;" href="#servicios">Servicios</a>
                                 </li>
+                                {% if user.is_authenticated %}
                                 <li class="nav-item">
-                                    <a class="nav-link" style="color: #ffffff;" href="">base</a>
+                                    <a class="nav-link" style="color: #ffffff;" href="{% url 'listar' %}">Editar API</a>
                                 </li>
+                                {% endif %}
+
+                                {% if user.is_authenticated %}
                                 <li class="nav-item">
                                     <a class="nav-link" style="color: #ffffff;" href="{% url 'lista_servicio' %}">Listar API</a>
                                 </li>
+                                {% endif %}
+
+
                                 <li class="nav-item">
                                     <a class="nav-link" style="color: #ffffff;" href="{% url 'iniciosesion' %}">Iniciar sesión</a>
                                 </li>
@@ -61,6 +67,9 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" style="color: #ffffff;" href="{% url 'registro' %}">Registrarse</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" style="color: #ffffff;" href="{% url 'carrito' %}">Carrito</a>
                                 </li>
 
                             </ul>
@@ -125,15 +134,12 @@
     <section class="bienvenida">
         <h4 class="bienvenida"> <b>Bienvenide!</b> {{ user.username }} Espero que te encuentres bien y que estes teniando un bello dìa </h4>
         <h5 class="bienvenida">@Shiluc.moon_tarot Tiene diversos servicios para ofrecerte para entregarte la mejor abundancia para ti y tus seres amados</h5>
-        {% block content %}
-
-        {% endblock content %}
+        {% block content %} {% endblock content %}
         <h1>Google </h1>
-    {% if user.is_authenticated %}
+        {% if user.is_authenticated %}
         <p>Estás logeado como {{ user.username }}</p>
-    {% else %}
-        <a href="{% provider_login_url 'google' %}">Login With Google</a>
-    {% endif %}
+        {% else %}
+        <a href="{% provider_login_url 'google' %}">Login With Google</a> {% endif %}
 
 
 
@@ -204,21 +210,21 @@
                 <h3 class="text-center" id="testimonios"> <i>Testimonios</i> </h3>
                 <!--<h3>{{persona.nombre}} {{persona.edad}} +56 9{{persona.telefono}} </h3>-->
                 <table border="1" class="table table-bordered table-dark">
-                <tr>
-                    <th>nombre servicio</th>
-                    <th>descripcion</th>
-                    <th>precio</th>
-                </tr>
-                {% for serapi in listaServicio%}
+                    <tr>
+                        <th>nombre servicio</th>
+                        <th>descripcion</th>
+                        <th>precio</th>
+                    </tr>
+                    {% for serapi in listaServicio%}
 
-                <tr>
-                    <td>{{serapi.precio}}</td>
-                    <td>{{serapi.nombreServicio}}</td>
-                    <td>{{serapi.descripcion}}</td>
+                    <tr>
+                        <td>{{serapi.precio}}</td>
+                        <td>{{serapi.nombreServicio}}</td>
+                        <td>{{serapi.descripcion}}</td>
 
-                </tr>
-                {% endfor %}
-            </table>
+                    </tr>
+                    {% endfor %}
+                </table>
             </div>
 
 
@@ -234,7 +240,7 @@
                         <th>precio</th>
                         <th scope="col">Modificar</th>
                         <th scope="col">Eliminar</th>
-                    
+
 
 
 
@@ -247,15 +253,15 @@
                         <td>{{ser.nombreServicio}}</td>
                         <td>{{ser.descripcion}}</td>
                         <td>{{ser.precio}}</td>
-                        
+
                         <td class="text-center">
                             <a href="{% url 'modificarservicio' ser.id%}"><img src="{% static 'horas/img/editar.png' %}" id="editar" alt="editar"></a>
                         </td>
                         <td class="text-center">
                             <a href="{% url 'eliminarservicio' ser.id%}" class="confirmareliminar"><img src="{% static 'horas/img/delete.png' %}" id="delete" alt="delete"></a>
                         </td>
-                       <!-- <td class="text-center">
-                            <a href="{% url 'detalle_servicio' ser.id%}" >Modificar API</a>
+                        <!-- <td class="text-center">
+                           
                         </td>-->
 
 

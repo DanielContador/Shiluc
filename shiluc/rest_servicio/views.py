@@ -11,10 +11,37 @@ from rest_framework.permissions import IsAuthenticated
 from horas.forms import ServicioForm
 
 # Create your views here.
+@api_view(['POST'])
+def editarServicio(request, id):
+    servicio = Servicio.objects.get(id=id)
+    serializer = ServicioSerializer(instance=servicio, data=request.data)
+    
+    if serializer.is_valid():
+        serializer.save()
+        
+        return Response(serializer.data)
 
+@csrf_exempt
+@api_view(['GET'])
+#@permission_classes((IsAuthenticated,))
+def lista_servicio(request):
+    if request.method =='GET':
+        listaServicio = Servicio.objects.all().order_by('-id')
+        serializer = ServicioSerializer(listaServicio, many = True)
+        return Response(serializer.data)
+
+
+@api_view(['POST'])
+def crearServicio(request):
+    serializer = ServicioSerializer(data=request.data)
+    
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
+
+"""
 @api_view(['GET','PUT','DELETE'])
 @permission_classes((IsAuthenticated,))
-
 def detalle_servicio(request, id):
     try:
         servicio = Servicio.objects.get(id=id)
@@ -35,11 +62,26 @@ def detalle_servicio(request, id):
     elif request.method == "DELETE":
         servicio.delete()
         return Response(status = status.HTTP_204_NO_CONTENT)
-        
 
+"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""
+METODO VISTO EN CLASES LISTA+POST
 @csrf_exempt
 @api_view(['GET','POST'])
-@permission_classes((IsAuthenticated,))
+#@permission_classes((IsAuthenticated,))
 def lista_servicio(request):
     if request.method =='GET':
         listaServicio = Servicio.objects.all()
@@ -55,9 +97,16 @@ def lista_servicio(request):
             return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
 
 
+
 """
+
+
+"""
+
+VISTO EN CLASES GET PUT DELETE
 @api_view(['GET','PUT','DELETE'])
-@permission_classes((IsAuthenticated,))
+#@permission_classes((IsAuthenticated,))
+
 def detalle_servicio(request, id):
     try:
         servicio = Servicio.objects.get(id=id)
@@ -78,5 +127,4 @@ def detalle_servicio(request, id):
     elif request.method == "DELETE":
         servicio.delete()
         return Response(status = status.HTTP_204_NO_CONTENT)
-
-"""
+        """
