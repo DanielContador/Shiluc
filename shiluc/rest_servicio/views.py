@@ -41,6 +41,13 @@ def crearServicio(request):
         serializer.save()
     return Response(serializer.data)
 
+@api_view(['DELETE'])
+def eliminarServicio(request, id):
+    servicio = Servicio.objects.get(id=id)
+    servicio.delete()
+    
+    return Response(serializer.data)
+
 """
 @api_view(['GET','PUT','DELETE'])
 @permission_classes((IsAuthenticated,))
