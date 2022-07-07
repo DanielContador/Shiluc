@@ -9,7 +9,7 @@
 				<form id="form">
 					<div id="user-info">
 						<div class="form-field">
-							<input required class="form-control" type="text" name="name" placeholder="Name..">
+							<input required class="form-control" type="text" name="name" placeholder="Nombre..">
 						</div>
 						<div class="form-field">
 							<input required class="form-control" type="email" name="email" placeholder="Email..">
@@ -21,19 +21,19 @@
 						<p>Información de envio:</p>
 						<hr>
 						<div class="form-field">
-							<input class="form-control" type="text" name="address" placeholder="Address..">
+							<input class="form-control" type="text" name="address" placeholder="Dirección..">
 						</div>
 						<div class="form-field">
-							<input class="form-control" type="text" name="city" placeholder="City..">
+							<input class="form-control" type="text" name="city" placeholder="Ciudad..">
 						</div>
 						<div class="form-field">
-							<input class="form-control" type="text" name="state" placeholder="State..">
+							<input class="form-control" type="text" name="state" placeholder="Región..">
 						</div>
 						<div class="form-field">
-							<input class="form-control" type="text" name="zipcode" placeholder="Zip code..">
+							<input class="form-control" type="text" name="zipcode" placeholder="Código postal..">
 						</div>
 						<div class="form-field">
-							<input class="form-control" type="text" name="country" placeholder="Zip code..">
+							<input class="form-control" type="text" name="country" placeholder="País..">
 						</div>
 					</div>
 
@@ -55,14 +55,16 @@
 				<hr>
 				<h3>Resumen del pedido</h3>
 				<hr>
+				{% for item in items%}
 				<div class="cart-row">
-					<div style="flex:2"><img class="row-image" src="{% static 'tienda/img/placeholder.png' %}"></div>
-					<div style="flex:2"><p>Producto 1</p></div>
-					<div style="flex:1"><p>$20.00</p></div>
-					<div style="flex:1"><p>x2</p></div>
+					<div style="flex:2"><img class="row-image" src="{{item.producto.imagenURL}}"></div>
+					<div style="flex:2"><p>{{item.producto.nombre}}</p></div>
+					<div style="flex:1"><p>{{item.producto.precio}}</p></div>
+					<div style="flex:1"><p>{{item.cantidad}}</p></div>
 				</div>
-				<h5>Productos:   2</h5>
-				<h5>Total:   $4</h5>
+			{% endfor %}
+				<h5>Productos:   {{orden.get_cart_items}}</h5>
+				<h5>Total:   ${{orden.get_cart_total}}</h5>
 			</div>
 		</div>
 	</div>

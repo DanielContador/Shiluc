@@ -25,7 +25,7 @@ class Producto(models.Model):
     @property
     def imagenURL(self):
         try:
-            url = self.image.url
+            url = self.imagen.url
         except:
             url = ''
         return url
@@ -38,6 +38,19 @@ class Orden(models.Model):
     
     def __str__(self):
         return str(self.id)
+    @property
+    def get_cart_total(self):
+        ordenproducto = self.ordenproducto_set.all()
+        total = sum([item.get_total for item in ordenproducto])
+        return total
+    
+    @property
+    def get_cart_items(self):
+        ordenproducto = self.ordenproducto_set.all()
+        total = sum([item.cantidad for item in ordenproducto])
+        return total
+        
+        
     
 class OrdenProducto(models.Model):
     producto = models.ForeignKey(Producto, on_delete=models.SET_NULL, null=True)
@@ -46,8 +59,10 @@ class OrdenProducto(models.Model):
     fecha_agregado = models.DateTimeField(auto_now_add=True)
     
     
-    
-    #def?
+    @property
+    def get_total(self):
+        total = self.producto.precio * self.cantidad
+        return total
     
     
 class DireccionEnvio(models.Model):
