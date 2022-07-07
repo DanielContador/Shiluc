@@ -38,6 +38,17 @@ class Orden(models.Model):
     
     def __str__(self):
         return str(self.id)
+    
+    @property
+    def shipping(self):
+        shipping = False
+        ordenproducto = self.ordenproducto_set.all()
+        for i in ordenproducto:
+            if i.producto.digital == False:
+                shipping = True
+        return shipping
+    
+    
     @property
     def get_cart_total(self):
         ordenproducto = self.ordenproducto_set.all()

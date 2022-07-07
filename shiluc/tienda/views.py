@@ -6,8 +6,19 @@ import json
 # Create your views here.
 
 def tienda(request):
+    
+    if request.user.is_authenticated:
+        cliente= request.user.cliente
+        orden, created= Orden.objects.get_or_create(cliente=cliente, completado=False)
+        items = orden.ordenproducto_set.all()
+        cartItems = orden.get_cart_items
+    else:
+        items = []
+        orden = {'get_cart_total':0, 'get_cart_items':0, 'shipping':False}
+        cartItems = orden['get_cart_items']
+        
     productos = Producto.objects.all()
-    context={'productos':productos}
+    context={'productos':productos, 'cartItems':cartItems}
     return render(request, 'tienda/tienda.html', context)
 
 
@@ -17,11 +28,12 @@ def carrito(request):
         cliente= request.user.cliente
         orden, created= Orden.objects.get_or_create(cliente=cliente, completado=False)
         items = orden.ordenproducto_set.all()
+        cartItems = orden.get_cart_items
     else:
         items = []
-        orden = {'get_cart_total':0, 'get_cart_items':0}
-        
-    context = {'items': items, 'orden':orden}
+        orden = {'get_cart_total':0, 'get_cart_items':0, 'shipping':False}
+        cartItems = orden['get_cart_items']
+    context = {'items': items, 'orden':orden, 'cartItems': cartItems}
     return render(request, 'tienda/carrito.html', context)
 
 def checkout(request):
@@ -29,11 +41,13 @@ def checkout(request):
         cliente= request.user.cliente
         orden, created= Orden.objects.get_or_create(cliente=cliente, completado=False)
         items = orden.ordenproducto_set.all()
+        cartItems = orden.get_cart_items
         
     else:
         items = []
-        orden = {'get_cart_total':0, 'get_cart_items':0}
-    context={'items':items, 'orden':orden}
+        orden = {'get_cart_total':0, 'get_cart_items':0, 'shipping': False}
+        cartItems = orden['get_cart_items']
+    context={'items':items, 'orden':orden, 'cartItems':cartItems}
     return render(request, 'tienda/checkout.html', context)
 
 def maintienda(request):
