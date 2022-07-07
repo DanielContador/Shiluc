@@ -85,10 +85,10 @@ def processOrder(request):
     if request.user.is_authenticated:
         cliente=request.user.cliente
         orden, created= Orden.objects.get_or_create(cliente=cliente, completado=False)
-        total=data['form']['total']
+        total=int(data['form']['total'])
         orden.id_transaccion = id_transaccion
         
-        if total ==orden.get_cart_total:
+        if total ==int(orden.get_cart_total):
             orden.completado = True
         orden.save()
         
