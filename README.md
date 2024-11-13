@@ -11,7 +11,7 @@
 ---
 
 ## 🚀 **Descripción del Proyecto**  
-**TarotShop** es una página web desarrollada con **Django** que permite la administración de **horas de atención** de tarotistas, **venta de productos relacionados con el tarot**, gestión de un **carrito de compras**, y **autenticación de usuarios** con soporte para **OAuth** (Inicio de sesión con Google). Además, incluye un **panel de administración** para usuarios con permisos de administrador.
+**Shiluc** es una página web desarrollada con **Django** que permite la administración de **horas de atención** de tarotistas, **venta de productos relacionados con el tarot**, gestión de un **carrito de compras**, y **autenticación de usuarios** con soporte para **OAuth** (Inicio de sesión con Google). Además, incluye un **panel de administración** para usuarios con permisos de administrador.
 
 ---
 
@@ -30,7 +30,7 @@
 
 - **Django** 🐍: Framework principal para la construcción de la aplicación web.
 - **Python** 🐍: Lenguaje de programación principal.
-- **SQLite/PostgreSQL**: Base de datos para almacenamiento de información.
+- **SQLite**: Base de datos para almacenamiento de información.
 - **Django REST Framework**: Para la creación de la API RESTful.
 - **OAuth 2.0** 🔒: Implementación de autenticación con Google.
 - **HTML5**, **CSS3**, **JavaScript**: Para el desarrollo de la interfaz de usuario.
@@ -38,20 +38,6 @@
 
 ---
 
-## 🔐 **Autenticación con Google (OAuth)**
-
-Para habilitar el inicio de sesión con Google:
-
-1. Crea un proyecto en [Google Developer Console](https://console.developers.google.com/).
-2. Habilita la **API de Google OAuth** y obtén tus credenciales.
-3. Añade las credenciales a las configuraciones de la aplicación en `settings.py` de Django.
-
-```python
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'your-client-id'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'your-client-secret'
-```
-
----
 
 ## 💬 **Contacto**
 
